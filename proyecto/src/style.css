@@ -1,0 +1,207 @@
+/* ===========================
+   Reset y estilos generales
+   =========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Comic Sans MS", "Segoe UI", sans-serif;
+}
+
+body {
+  background: radial-gradient(circle at top, #1a1a1a, #2c3e50);
+  color: #f9f871;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+#app {
+  width: 100%;
+  max-width: 900px;
+  background: rgba(0, 0, 0, 0.85);
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 0 25px #00ff9d;
+  border: 2px solid #9b59b6;
+}
+
+/* ===========================
+   Títulos y tipografía
+   =========================== */
+h2 {
+  margin-bottom: 15px;
+  color: #00ff9d;
+  text-shadow: 2px 2px #9b59b6;
+  font-size: 26px;
+  text-align: center;
+}
+
+p {
+  margin: 6px 0;
+  font-size: 15px;
+  color: #f9f871;
+}
+
+/* ===========================
+   Formularios (registro, login, original)
+   =========================== */
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 2px solid #9b59b6;
+  border-radius: 8px;
+  background: #2c3e50;
+  color: #00ff9d;
+  font-size: 15px;
+  transition: all 0.3s;
+}
+
+input:focus {
+  border-color: #00ff9d;
+  outline: none;
+  box-shadow: 0 0 10px #00ff9d;
+}
+
+button {
+  background: linear-gradient(45deg, #00ff9d, #9b59b6);
+  color: #1a1a1a;
+  font-weight: bold;
+  border: none;
+  padding: 12px 18px;
+  margin-top: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #f9f871;
+}
+
+pre {
+  background: #1a1a1a;
+  padding: 12px;
+  border-radius: 8px;
+  margin-top: 15px;
+  font-size: 14px;
+  color: #00ff9d;
+  overflow-x: auto;
+}
+
+/* ===========================
+   Tarjetas del Home (API Rick & Morty)
+   =========================== */
+.app-card {
+  display: flex;
+  align-items: flex-start;
+  background: rgba(44, 62, 80, 0.9);
+  border: 2px solid #00ff9d;
+  border-radius: 12px;
+  margin: 12px 0;
+  padding: 12px;
+  box-shadow: 0 0 15px #9b59b6;
+  transition: transform 0.2s;
+}
+
+.app-card:hover {
+  transform: translateY(-5px) scale(1.02);
+}
+
+.app-card img {
+  width: 120px;
+  height: auto;
+  border-radius: 8px;
+  margin-right: 15px;
+  border: 2px solid #f9f871;
+}
+
+.app-info {
+  flex: 1;
+}
+
+.app-info h2 {
+  margin-bottom: 8px;
+  font-size: 20px;
+  color: #00ff9d;
+  text-shadow: 1px 1px #f9f871;
+}
+
+.app-info p {
+  margin: 4px 0;
+  font-size: 14px;
+  color: #f9f871;
+}
+
+/* ===========================
+   Logout y botones especiales
+   =========================== */
+#btnLogout, #btnConfirmLogout {
+  background: linear-gradient(45deg, #e74c3c, #f9f871);
+  color: #1a1a1a;
+}
+
+#btnLogout:hover, #btnConfirmLogout:hover {
+  background: linear-gradient(45deg, #c0392b, #f9f871);
+}
+
+#btnCancelLogout {
+  background: #95a5a6;
+  color: #1a1a1a;
+}
+
+#btnCancelLogout:hover {
+  background: #7f8c8d;
+}
+
+/* ===========================
+   Responsividad
+   =========================== */
+input, button {
+  width: 100%;
+  max-width: 100%;
+  display: block;
+}
+
+@media (min-width: 600px) {
+  .app-card {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .app-card img {
+    margin-right: 15px;
+    margin-bottom: 0;
+    max-width: 150px;
+  }
+
+  .app-info {
+    text-align: left;
+  }
+}
+
+@media (min-width: 900px) {
+  #app {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+
+  .app-card {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .app-card img {
+    max-width: 100%;
+    margin: 0 0 10px 0;
+  }
+
+  .app-info {
+    text-align: center;
+  }
+}
